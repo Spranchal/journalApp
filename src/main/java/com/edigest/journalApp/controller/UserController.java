@@ -26,7 +26,7 @@ public class UserController {
     @Autowired
     private UserEntryRepo userEntryRepo;
 
-
+    // UPDATING USER (AUTHENTICATED)
     @PutMapping
     public ResponseEntity<?> updateUser(@RequestBody User user) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -39,11 +39,12 @@ public class UserController {
         }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
-
+    // DELETING USER BY ID (AUTHENTICATED)
     @DeleteMapping
     public ResponseEntity<?> deleteByUserId() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         userEntryRepo.deleteByUserName(authentication.getName());
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
 }
