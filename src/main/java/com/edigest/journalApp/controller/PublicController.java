@@ -13,7 +13,7 @@ import com.edigest.journalApp.Service.UserService;
 @RestController
 @RequestMapping("/public")
 public class PublicController {
-    
+
     @Autowired
     private UserService userService;
     
@@ -22,8 +22,8 @@ public class PublicController {
         return "OK";
     }
 
-    @PostMapping
+    @PostMapping("/create-user")
     public void createUser(@RequestBody User user) {
-        userService.saveEntry(user);
+        userService.saveNewUser(user);
     }
 }
