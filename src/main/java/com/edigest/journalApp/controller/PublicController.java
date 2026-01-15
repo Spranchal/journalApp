@@ -26,4 +26,5 @@ public class PublicController {
     public void createUser(@RequestBody User user) {
         userService.saveNewUser(user);
     }
+    //Aur bhi karunge kuchhh
 }
