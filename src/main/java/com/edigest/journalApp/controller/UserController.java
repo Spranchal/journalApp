@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.edigest.journalApp.Entity.User;  
-import com.edigest.journalApp.Service.UserService;
+import com.edigest.journalApp.Entity.User;
 import com.edigest.journalApp.repository.UserEntryRepo;
+import com.edigest.journalApp.Services.UserService;
 
 
 @RestController

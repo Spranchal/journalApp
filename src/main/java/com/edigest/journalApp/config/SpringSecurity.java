@@ -13,7 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
-import com.edigest.journalApp.Service.UserDetailsServiceImpl;
+import com.edigest.journalApp.Services.UserDetailsServiceImpl;
 
 
 @Configuration

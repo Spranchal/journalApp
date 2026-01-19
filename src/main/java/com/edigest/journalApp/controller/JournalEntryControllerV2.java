@@ -21,8 +21,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.edigest.journalApp.Entity.JournalEntry;
 import com.edigest.journalApp.Entity.User;
-import com.edigest.journalApp.Service.JournalEntryService;
-import com.edigest.journalApp.Service.UserService;
+import com.edigest.journalApp.Services.JournalEntryService;
+import com.edigest.journalApp.Services.UserService;
 
 @RestController
 @RequestMapping("/journal")

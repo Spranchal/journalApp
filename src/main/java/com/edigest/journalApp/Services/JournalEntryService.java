@@ -1,4 +1,4 @@
-package com.edigest.journalApp.Service;
+package com.edigest.journalApp.Services;
 
 import java.time.LocalDateTime;
 import java.util.List;
