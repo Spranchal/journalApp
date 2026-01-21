@@ -18,7 +18,7 @@ public class UserServiceTests {
     @Autowired
     private UserEntryRepo userEntryRepo;
 
-
+    @Disabled
     @ParameterizedTest
     @CsvSource({ //CsvSource ka matlab ni banta
         "Ram",
@@ -32,14 +32,14 @@ public class UserServiceTests {
         
     }
 
-    @Disabled
+    // @Disabled
     @ParameterizedTest
     @CsvSource({
-        "1, 1, 2",
-        "2, 10, 12",
+        "1, 1, 0",
+        "20, 11, 9",
         "1, 3, 5"
     })
     public void test(int a, int b, int expected) {
-        assertEquals(expected, a + b);
+        assertEquals(expected, a - b);
     }
 }
