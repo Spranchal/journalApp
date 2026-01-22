@@ -22,10 +22,10 @@ public class UserServiceTests {
     @ParameterizedTest
     @CsvSource({ //CsvSource ka matlab ni banta
         "Ram",
-        "Shyam",
+        "Shy",
         "Pranchal",
-        "rdvhi",
-        "eifhvb"
+        "rdvuyf",
+        "eifhvjyf"
     })
     public void testFindByUserName(String name) {
         assertNotNull(userEntryRepo.findByUserName(name));
@@ -39,6 +39,7 @@ public class UserServiceTests {
         "20, 11, 9",
         "1, 3, 5"
     })
+    
     public void test(int a, int b, int expected) {
         assertEquals(expected, a - b);
     }
