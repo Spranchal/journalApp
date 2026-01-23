@@ -2,8 +2,6 @@ package com.edigest.journalApp.Services;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -22,9 +20,9 @@ public class UserServiceTests {
     @ParameterizedTest
     @CsvSource({ //CsvSource ka matlab ni banta
         "Ram",
-        "Shy",
+        "Shyammmm",
         "Pranchal",
-        "rdvuyf",
+        "Modi",
         "eifhvjyf"
     })
     public void testFindByUserName(String name) {
@@ -36,7 +34,7 @@ public class UserServiceTests {
     @ParameterizedTest
     @CsvSource({
         "1, 1, 0",
-        "20, 11, 9",
+        "20, 11, 4",
         "1, 3, 5"
     })
     
