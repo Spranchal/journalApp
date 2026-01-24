@@ -20,7 +20,7 @@ public class UserServiceTests {
     @ParameterizedTest
     @CsvSource({ //CsvSource ka matlab ni banta
         "Ram",
-        "Shyammmm",
+        "Shyam",
         "Pranchal",
         "Modi",
         "eifhvjyf"
@@ -33,12 +33,12 @@ public class UserServiceTests {
     // @Disabled
     @ParameterizedTest
     @CsvSource({
-        "1, 1, 0",
-        "20, 11, 4",
-        "1, 3, 5"
+        "1, 1, 2",
+        "20, 11, 31",
+        "1, 4, 5"
     })
     
     public void test(int a, int b, int expected) {
-        assertEquals(expected, a - b);
+        assertEquals(expected, a + b);
     }
 }
