@@ -22,17 +22,12 @@ import com.edigest.journalApp.Services.UserDetailsServiceImpl;
 @Profile("prod")
 public class SpringSecurityProd {
 
-
     @Autowired
     private UserDetailsServiceImpl userDetailsService;
-
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.authorizeHttpRequests(request -> request
-                        .requestMatchers("/public/**").permitAll()
-                        .requestMatchers("/journal/**", "/user/**").authenticated()
-                        .requestMatchers("/admin/**").hasRole("ADMIN")
                         .anyRequest().authenticated())
                 .httpBasic(Customizer.withDefaults())
                 .csrf(AbstractHttpConfigurer::disable)

@@ -6,6 +6,6 @@ spring:
       auto-index-creation: true
       
 server:
-  port: 8888
+  port: 8080
   servlet:
     context-path: /journal
