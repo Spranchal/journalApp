@@ -10,13 +10,14 @@ import static org.mockito.Mockito.*;
 import java.util.ArrayList;
 
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
 import com.edigest.journalApp.repository.UserEntryRepo;
 import com.edigest.journalApp.Entity.User;
 import com.mongodb.assertions.Assertions;
 
-@SpringBootTest
+@ActiveProfiles("dev")
 public class UserDetailsServiceImplTest {
 
     @Autowired
