@@ -15,13 +15,17 @@ import org.springframework.stereotype.Component;
 import com.edigest.journalApp.Entity.User;
 import com.edigest.journalApp.repository.UserEntryRepo;
 
+import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
+
 @Component
+@Slf4j
 public class UserService {
 
     @Autowired
     private UserEntryRepo userEntryRepo;
 
-    private static final Logger logger = LoggerFactory.getLogger(UserService.class);
+    // private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
     private static final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
@@ -32,11 +36,11 @@ public class UserService {
             userEntryRepo.save(user);
             return true;
         } catch (Exception e) {
-            logger.error("Error occured for {} :", user.getUserName());
-            // logger.info("HAHAHAHAHA");
-            // logger.warn("HAHAHAHAHA");
-            // logger.debug("HAHAHAHAHA");
-            // logger.trace("HAHAHAHAHA");
+            log.error("HAHAHAHAHA");
+            log.info("HAHAHAHAHA");
+            log.warn("HAHAHAHAHA");
+            log.debug("HAHAHAHAHA");
+            log.trace("HAHAHAHAHA");
             return false;
         }
         
