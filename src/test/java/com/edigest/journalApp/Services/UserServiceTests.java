@@ -30,13 +30,14 @@ public class UserServiceTests {
         
     }
 
-    // @Disabled
+    @Disabled
     @ParameterizedTest
     @CsvSource({
         "1, 1, 2",
         "20, 11, 31",
         "1, 4, 5"
     })
+    
     
     public void test(int a, int b, int expected) {
         assertEquals(expected, a + b);

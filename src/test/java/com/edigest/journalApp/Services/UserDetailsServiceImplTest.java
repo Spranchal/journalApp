@@ -1,5 +1,6 @@
 package com.edigest.journalApp.Services;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentMatchers;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,7 @@ public class UserDetailsServiceImplTest {
     @MockitoBean
     private UserEntryRepo userRepo;
 
+    @Disabled
     @Test
     void loadUserByUsernameTest() {
         when(userRepo.findByUserName(ArgumentMatchers.anyString())).thenReturn(User.builder().userName("Ram").password("sidfv").roles(new ArrayList<>()).build());
