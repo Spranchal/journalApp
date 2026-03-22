@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.edigest.journalApp.api.response.WeatherResponse;
+import com.edigest.journalApp.cache.AppCache;
 
 @Service
 public class WeatherService {
@@ -19,13 +20,16 @@ public class WeatherService {
     @Value("${weather.api.key}")
     private String apiKey;
 
-    private static final String API = "http://api.weatherapi.com/v1/current.json?key=API_KEY&q=CITY&aqi=yes";
+    // private static final String API = "http://api.weatherapi.com/v1/current.json?key=API_KEY&q=CITY&aqi=yes";
+
+    @Autowired
+    private AppCache appCache;
 
     @Autowired
     private RestTemplate restTemplate;
 
     public WeatherResponse getWeather(String city) {
-        String finalApi = API.replace("CITY", city).replace("API_KEY", apiKey);
+        String finalApi = appCache.APP_CACHE.get("weather_api").replace("<city>", city).replace("<apiKey>", apiKey);
 
         // String requestBody = "{\r\n" + 
         //                 "    \"userName\": \"Shyam\",\r\n" + 

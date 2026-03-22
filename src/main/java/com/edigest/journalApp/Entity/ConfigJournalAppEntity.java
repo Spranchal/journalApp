@@ -6,25 +6,16 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.mongodb.lang.NonNull;
-
 import lombok.Data;
 
-@Document(collection = "journal_entries")
+@Document(collection = "config_journal_app")
 @Data
 
 // @Getter
 // @Setter
-public class JournalEntry {
+public class ConfigJournalAppEntity {
 
-    @Id
-    private ObjectId id;
-    @NonNull
-    private String title;
-    private String content;
-    private LocalDateTime date;
-    
-   
-    
+    private String key;
+    private String value;
 
 }
