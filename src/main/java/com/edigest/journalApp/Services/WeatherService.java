@@ -13,6 +13,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.edigest.journalApp.api.response.WeatherResponse;
 import com.edigest.journalApp.cache.AppCache;
+import com.edigest.journalApp.constants.Placeholders;
 
 @Service
 public class WeatherService {
@@ -29,7 +30,7 @@ public class WeatherService {
     private RestTemplate restTemplate;
 
     public WeatherResponse getWeather(String city) {
-        String finalApi = appCache.APP_CACHE.get("weather_api").replace("<city>", city).replace("<apiKey>", apiKey);
+        String finalApi = appCache.appCache.get(AppCache.keys.weather_api.toString()).replace(Placeholders.CITY, city).replace(Placeholders.API_KEY, apiKey);
 
         // String requestBody = "{\r\n" + 
         //                 "    \"userName\": \"Shyam\",\r\n" + 

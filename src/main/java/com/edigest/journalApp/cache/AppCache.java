@@ -15,16 +15,20 @@ import jakarta.annotation.PostConstruct;
 @Component
 public class AppCache {
 
+    public enum keys {
+        weather_api;
+    }
+
     @Autowired
     private ConfigJournalAppRepo configJournalAppRepo;
 
-    public Map<String, String> APP_CACHE = new HashMap<>();
+    public Map<String, String> appCache = new HashMap<>();
 
     @PostConstruct
     public void init() {
         List<ConfigJournalAppEntity> all = configJournalAppRepo.findAll();
         for(ConfigJournalAppEntity configJournalAppEntity : all) {
-            APP_CACHE.put(configJournalAppEntity.getKey(), configJournalAppEntity.getValue());
+            appCache.put(configJournalAppEntity.getKey(), configJournalAppEntity.getValue());
         }
     }
 }
