@@ -4,6 +4,18 @@ spring:
       uri: mongodb+srv://spranchal864_db_user:eODVF2YfdJpmHk72@cluster0.3mev3q1.mongodb.net/?appName=Cluster0
       database: journaldb
       auto-index-creation: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: spranchal864@gmail.com
+    password: envo itga vamu wdmy
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
       
 server:
   port: 8080
